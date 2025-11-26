@@ -1,12 +1,9 @@
 import tkinter
+from tkinter import *
 from app import inventory, item
 inventory = inventory()
 
 main = tkinter.Tk()
-
-label = tkinter.Label(main, text = "Hello World")
-
-label.pack()
 
 inputbox = tkinter.Entry(main)
 
@@ -16,10 +13,10 @@ inputdurability = tkinter.Entry(main)
 
 inputdamage = tkinter.Entry(main)
 
-inputbox.pack(pady = 20)
-inputweight.pack(pady = 20)
-inputdurability.pack(pady = 20)
-inputdamage.pack(pady = 20)
+inputbox.grid(pady = 20, row=1)
+inputweight.grid(pady = 20, row=3)
+inputdurability.grid(pady = 20, row=5)
+inputdamage.grid(pady = 20, row=7)
 
 def log(event = None):
      for item in inventory.get_contents():
@@ -35,10 +32,16 @@ def createadd(event = None):
 
 button = tkinter.Button(main, text = "create an item", command = createadd)
 
-button.pack(pady = 20)
+button.grid(pady = 20)
 
 textbox = tkinter.Text(main, height = 10, width = 50)
 
-textbox.pack(pady = 20)
+textbox.grid(pady = 20)
+
+Label(main, text='Name of item').grid(row=0)
+Label(main, text='weight of item').grid(row=2)
+Label(main, text='durability of item').grid(row=4)
+Label(main, text='damage of item').grid(row=6)
+
 
 main.mainloop()
