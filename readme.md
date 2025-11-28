@@ -1,0 +1,1 @@
+jag har gjor ett inventory som har olika block och items. jag har också gjort en gui som pratar med inventoryt så att man kan läga till items och ge dom olika atributer.
